@@ -1,7 +1,7 @@
 byte pot_pin = A0;        //byte je hodnota od 0-255, pin A0 a další analogové piny můžeme použít taky
 byte red_pin = 5;        //pin pro červenou ledku
 
-int pot_val;            //proměnná pro hodnotu potenciometru
+int pot_val;           //proměnná pro hodnotu potenciometru
 
 void setup() {
   Serial.begin(9600);              //zapneme sériovou linku, později tam vypisujeme hodnotu potenciometru
