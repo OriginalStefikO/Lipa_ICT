@@ -20,6 +20,8 @@ body {
 }
 
 #player {
+    transition: 50ms;
+    transition-timing-function: linear;
     width: 60px;
     height: 60px;
     position: absolute;
