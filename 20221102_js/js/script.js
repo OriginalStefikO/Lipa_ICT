@@ -1,50 +1,66 @@
 window.addEventListener("load", function () {
     const player = document.getElementById("player");
+    const playground = document.getElementById("border");
+
 
     var pStyle = getComputedStyle(player);
+    var pgStyle = getComputedStyle(playground);
 
-    var posLeft = parseInt(pStyle.left);
-    var posTop = parseInt(pStyle.top);
+    var jump = parseInt(pStyle.width);
+
+    var plLeft = parseInt(pStyle.left);
+    var plTop = parseInt(pStyle.top);
+
+    var pgLeft = parseInt(pgStyle.left);
+    var pgTop = parseInt(pgStyle.top);
+
 
     var waiting = false;
 
-    const jump = 25;
-    
     document.onkeydown = function (event) {
-        
-        if (waiting) { return; }
+
+        if (waiting) { return; };
 
         switch (event.key) {
             case "ArrowLeft":
                 // Left pressed
                 console.log("Left pressed");
-                posLeft -= jump;
+                if (plLeft > pgLeft) {
+                    plLeft -= jump;
+                }
                 break;
             case "ArrowRight":
                 // Right pressed
                 console.log("Right pressed");
-                posLeft += jump;
+                if (plLeft + parseInt(pStyle.width) < pgLeft + parseInt(pgStyle.width)) {
+                    plLeft += jump;
+                }
                 break;
             case "ArrowUp":
                 // Up pressed
                 console.log("Up pressed");
-                posTop -= jump;
+                if (plTop > pgTop) {
+                    plTop -= jump;
+                }
                 break;
             case "ArrowDown":
                 // Down pressed
                 console.log("Down pressed");
-                posTop += jump;
+                if (plTop + parseInt(pStyle.height) < pgTop + parseInt(pgStyle.height)) {
+                    plTop += jump;
+                }
                 break;
         }
-        
+
         waiting = true;
         const myTimeout = setTimeout(waitingSwitch, parseFloat(pStyle.transitionDuration) * 1000);
 
-        player.style.left = posLeft + "px";
-        player.style.top = posTop + "px";
+        player.style.left = plLeft + "px";
+        player.style.top = plTop + "px";
     };
 
     function waitingSwitch() {
         waiting = false;
     }
 });
+
