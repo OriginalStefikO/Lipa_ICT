@@ -7,6 +7,8 @@ window.addEventListener("load", function () {
     var posTop = parseInt(pStyle.top);
 
     document.onkeydown = function (event) {
+        
+
 
         switch (event.key) {
             case "ArrowLeft":

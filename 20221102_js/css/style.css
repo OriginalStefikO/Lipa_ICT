@@ -1,13 +1,22 @@
+:root {
+    --playerSize: 40px;
+    --gameSize: 400px;
+    --backgroundColor: rgb(35, 37, 54);
+    --gameBgColor: rgb(57, 60, 85);
+    --textColor: rgb(231, 231, 231);
+    --playerColor: rgb(192, 66, 66);
+}
+
 body {
     margin: 0;
-    color: rgb(231, 231, 231);
+    color: var(--textColor);
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 #playground {
     width: 100vw;
     height: 100vh;
-    background-color: rgb(35, 37, 54);
+    background-color: var(--backgroundColor);
     margin: 0;
     padding: 0;
 }
@@ -20,13 +29,40 @@ body {
 }
 
 #player {
-    width: 60px;
-    height: 60px;
+    width: var(--playerSize);
+    height: var(--playerSize);
     position: absolute;
 
-    background-color: rgb(192, 66, 66);
-    border-radius: 15%;
+    background-color: var(--playerColor);
+    border-radius: 10px;
 
     left: 15px;
     top: 40px;
+    box-shadow: 0 0 10px rgb(41, 47, 58);
+}
+
+
+#border {
+    width: var(--gameSize);
+    height: var(--gameSize);
+    position: absolute;
+
+    left: 15px;
+    top: 40px;
+    
+    background-color: var(--gameBgColor);
+    border-radius: 10px;
+    
+}
+
+#borderShadow {
+    width: var(--gameSize);
+    height: var(--gameSize);
+    position: absolute;
+    
+    left: 15px;
+    top: 40px;
+
+    box-shadow: inset 0 0 10px rgb(19, 22, 27);
+    border-radius: 10px;
 }
