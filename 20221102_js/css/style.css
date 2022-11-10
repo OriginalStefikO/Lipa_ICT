@@ -29,6 +29,7 @@ body {
 }
 
 #player {
+    /* transition: 400ms; */
     width: var(--playerSize);
     height: var(--playerSize);
     position: absolute;
