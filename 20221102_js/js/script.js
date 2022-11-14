@@ -53,7 +53,7 @@ window.addEventListener("load", function () {
         }
 
         waiting = true;
-        const myTimeout = setTimeout(waitingSwitch, parseFloat(pStyle.transitionDuration) * 1000);
+        const myTimeout = setTimeout(waitingSwitch, parseFloat(pStyle.transitionDuration) * 1000 / 2);
 
         player.style.left = plLeft + "px";
         player.style.top = plTop + "px";
