@@ -1,14 +1,17 @@
 window.addEventListener("load", function () {
     const player = document.getElementById("player");
-
     var pStyle = getComputedStyle(player);
-
     var posLeft = parseInt(pStyle.left);
     var posTop = parseInt(pStyle.top);
+    const pSize = parseInt(pStyle.width);
+    
+    const border = document.getElementById("border");
+    var borderStyle = getComputedStyle(border);
+    var borderPosLeft = parseInt(borderStyle.left);
+    var borderPosTop = parseInt(borderStyle.top);
+    const borderSize = parseInt(borderStyle.width);
 
     var waiting = false;
-
-    const pSize = parseInt(pStyle.width);
 
     document.onkeydown = function (event) {
 
@@ -18,7 +21,9 @@ window.addEventListener("load", function () {
             case "ArrowLeft":
                 // Left pressed
                 console.log("Left pressed");
-                posLeft -= pSize;
+                if (posLeft > borderPosLeft) {
+                    posLeft -= pSize;
+                }
                 break;
             case "ArrowRight":
                 // Right pressed
