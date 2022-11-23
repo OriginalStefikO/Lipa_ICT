@@ -13,6 +13,17 @@ window.addEventListener("load", function () {
 
     var waiting = false;
 
+    var obj = [];
+
+    for (var i = 0; i < borderSize/pSize; i++) {
+        var radek = [];
+        for (var j = 0; j < borderSize/pSize; j++) {
+            radek.push(0);
+        }
+        obj.push(radek);
+    }
+    console.log(obj);
+
     document.onkeydown = function (event) {
 
         if (waiting == true) {return};
@@ -28,17 +39,23 @@ window.addEventListener("load", function () {
             case "ArrowRight":
                 // Right pressed
                 console.log("Right pressed");
-                posLeft += pSize;
+                if (posLeft < (borderPosLeft + borderSize - pSize)) {
+                    posLeft += pSize;
+                }
                 break;
             case "ArrowUp":
                 // Up pressed
                 console.log("Up pressed");
-                posTop -= pSize;
+                if (posTop > borderPosTop) {
+                    posTop -= pSize;
+                }
                 break;
             case "ArrowDown":
                 // Down pressed
                 console.log("Down pressed");
-                posTop += pSize;
+                if (posTop < (borderPosTop + borderSize - pSize)) {
+                    posTop += pSize;
+                }
                 break;
         }
         waiting = true;
