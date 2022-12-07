@@ -25,8 +25,26 @@ var pole = [
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 ];
 
-
 var playerPos = [0, 0];
+
+for (let radek = 0; radek < pole.length; radek++) {
+    for (let sloupec = 0; sloupec < pole[radek].length; sloupec++) {
+        console.log(pole[radek][sloupec]);
+        if (pole[radek][sloupec] == 1) {
+            var newDiv = document.createElement("div");
+            newDiv.classList.add("wall");
+            newDiv.style.left = (borderPosLeft + sloupec * pSize) + "px";
+            newDiv.style.top = (borderPosTop + radek * pSize) + "px";
+            newDiv.style.width = pSize-2 + "px";
+            newDiv.style.height = pSize-2 + "px";
+            newDiv.style.backgroundColor = "black";
+            newDiv.style.position = "absolute";
+            newDiv.style.borderRadius = "5px";
+            document.body.appendChild(newDiv);
+            
+        }
+    }
+}
 
 document.onkeydown = function (event) {
 

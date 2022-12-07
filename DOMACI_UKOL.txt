@@ -1,0 +1,2 @@
+Od home až k Array
+https://www.w3schools.com/js/js_arrays.asp
