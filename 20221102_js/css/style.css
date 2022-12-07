@@ -50,17 +50,17 @@ body {
 
     left: 15px;
     top: 40px;
-    
+
     background-color: var(--gameBgColor);
     border-radius: 10px;
-    
+
 }
 
 #borderShadow {
     width: var(--gameSize);
     height: var(--gameSize);
     position: absolute;
-    
+
     left: 15px;
     top: 40px;
 
