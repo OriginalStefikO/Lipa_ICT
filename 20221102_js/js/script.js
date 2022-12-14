@@ -107,3 +107,10 @@ document.onkeydown = function (event) {
 function waitingSwitch() {
     waiting = false;
 }
+
+function inCircle(circle_x, circle_y, rad, x, y) {
+    if ((x - circle_x) * (x - circle_x) + (y - circle_y) * (y - circle_y) <= rad * rad)
+        return true;
+    else
+        return false;
+}
