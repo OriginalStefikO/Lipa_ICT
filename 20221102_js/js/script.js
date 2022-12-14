@@ -4,6 +4,8 @@ var posLeft = parseInt(pStyle.left);
 var posTop = parseInt(pStyle.top);
 const pSize = parseInt(pStyle.width);
 
+let renderDistance = 2.5;
+
 const border = document.getElementById("border");
 var borderStyle = getComputedStyle(border);
 var borderPosLeft = parseInt(borderStyle.left);
@@ -29,6 +31,8 @@ var playerPos = [0, 0];
 
 for (let radek = 0; radek < pole.length; radek++) {
     for (let sloupec = 0; sloupec < pole[radek].length; sloupec++) {
+        if (inCircle(playerPos[0], playerPos[1], renderDistance, sloupec, radek) == false) {break}
+
         console.log(pole[radek][sloupec]);
         if (pole[radek][sloupec] == 1) {
             var newDiv = document.createElement("div");
