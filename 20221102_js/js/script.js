@@ -27,25 +27,17 @@ var pole = [
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 ];
 
-var playerPos = [0, 0];
+var playerPos = [4, 3];
+posLeft = borderPosLeft + playerPos[0] * pSize;
+posTop = borderPosTop + playerPos[1] * pSize;
+player.style.left = borderPosLeft + playerPos[0] * pSize + "px";
+player.style.top = borderPosTop + playerPos[1] * pSize + "px";
 
 for (let radek = 0; radek < pole.length; radek++) {
     for (let sloupec = 0; sloupec < pole[radek].length; sloupec++) {
-        if (inCircle(playerPos[0], playerPos[1], renderDistance, sloupec, radek) == false) {break}
-
-        console.log(pole[radek][sloupec]);
-        if (pole[radek][sloupec] == 1) {
-            var newDiv = document.createElement("div");
-            newDiv.classList.add("wall");
-            newDiv.style.left = (borderPosLeft + sloupec * pSize) + "px";
-            newDiv.style.top = (borderPosTop + radek * pSize) + "px";
-            newDiv.style.width = pSize-2 + "px";
-            newDiv.style.height = pSize-2 + "px";
-            newDiv.style.backgroundColor = "black";
-            newDiv.style.position = "absolute";
-            newDiv.style.borderRadius = "5px";
-            document.body.appendChild(newDiv);
-            
+        // console.log(pole[radek][sloupec]);
+        if (pole[radek][sloupec] == 1 && inCircle(playerPos[0], playerPos[1], renderDistance, sloupec, radek)) {
+            createWall([sloupec * pSize, radek * pSize], pSize, 0.92, 5+"px", "black");
         }
     }
 }
@@ -97,9 +89,19 @@ document.onkeydown = function (event) {
             break;
     }
 
-    pole[playerPos[1]][playerPos[0]] = "X";
+    pole[playerPos[1]][playerPos[0]] = "x";
     console.clear();
     console.table(pole);
+
+    document.getElementById("border").innerHTML = "";
+    for (let radek = 0; radek < pole.length; radek++) {
+        for (let sloupec = 0; sloupec < pole[radek].length; sloupec++) {
+            // console.log(pole[radek][sloupec]);
+            if (pole[radek][sloupec] == 1 && inCircle(playerPos[0], playerPos[1], renderDistance, sloupec, radek)) {
+                createWall([sloupec * pSize, radek * pSize], pSize, 0.92, 5 + "px", "black");
+            }
+        }
+    }
 
     waiting = true;
     const myTimeout = setTimeout(waitingSwitch, parseFloat(pStyle.transitionDuration) * 1000);
@@ -117,4 +119,17 @@ function inCircle(circle_x, circle_y, rad, x, y) {
         return true;
     else
         return false;
+}
+
+function createWall(position, size, multiplier, borderRadius, color) {
+    var newDiv = document.createElement("div");
+    newDiv.classList.add("wall");
+    newDiv.style.left = position[0] + "px";
+    newDiv.style.top = position[1] + "px";
+    newDiv.style.width = size * multiplier + "px";
+    newDiv.style.height = size * multiplier + "px";
+    newDiv.style.backgroundColor = color;
+    newDiv.style.position = "absolute";
+    newDiv.style.borderRadius = borderRadius;
+    document.getElementById("border").appendChild(newDiv);
 }
