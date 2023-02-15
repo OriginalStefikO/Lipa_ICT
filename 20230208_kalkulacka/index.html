@@ -5,35 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lidl calc</title>
-    
+
     <link href="style.css" rel="stylesheet"/>
     
+    <script defer src="script.js"></script>
+
 </head>
 <body>
-    <table>
+    <p class="calc-output" id="calc-output"></p>
+
+    <table class="calc-buttons-section">
         <tr>
-            <td>c</td>
-            <td>*</td>
-            <td>/</td>
-            <td>x</td>
+            <td class="calc-button" onclick="buttonPressed(this)">c</td>
+            <td class="calc-button" onclick="buttonPressed(this)">*</td>
+            <td class="calc-button" onclick="buttonPressed(this)">/</td>
+            <td class="calc-button" onclick="buttonPressed(this)">x</td>
         <tr>
-            <td>9</td>
-            <td>8</td>
-            <td>7</td>
-            <td>-</td>
+            <td class="calc-button" onclick="buttonPressed(this)">9</td>
+            <td class="calc-button" onclick="buttonPressed(this)">8</td>
+            <td class="calc-button" onclick="buttonPressed(this)">7</td>
+            <td class="calc-button" onclick="buttonPressed(this)">-</td>
         <tr>
-            <td>6</td>
-            <td>5</td>
-            <td>4</td>
-            <td>+</td>
+            <td class="calc-button" onclick="buttonPressed(this)">6</td>
+            <td class="calc-button" onclick="buttonPressed(this)">5</td>
+            <td class="calc-button" onclick="buttonPressed(this)">4</td>
+            <td class="calc-button" onclick="buttonPressed(this)">+</td>
         <tr>
-            <td>3</td>
-            <td>2</td>
-            <td>1</td>
-            <td rowspan="2">=</td>
+            <td class="calc-button" onclick="buttonPressed(this)">3</td>
+            <td class="calc-button" onclick="buttonPressed(this)">2</td>
+            <td class="calc-button" onclick="buttonPressed(this)">1</td>
+            <td class="calc-button" onclick="buttonPressed(this)" rowspan="2">=</td>
         <tr>
-            <td colspan="2">0</td>
-            <td>,</td>
-            
+            <td class="calc-button" onclick="buttonPressed(this)" colspan="2">0</td>
+            <td class="calc-button" onclick="buttonPressed(this)">,</td>
+    </table>
 </body>
 </html>

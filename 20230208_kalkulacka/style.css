@@ -26,6 +26,8 @@ td {
     border-radius: 5px;
 
     transition: 150ms;
+
+    user-select: none;
 }
 
 td:hover {
@@ -36,4 +38,16 @@ td:hover {
 td:active {
     background-color: #ebe0e0;
     color: #6a6a77;
+}
+
+.calc-output {
+    margin: 2px;
+    padding: 0;
+
+    height: 50px;
+
+    background-color: #44454d;
+    width: 246px;
+
+    border-radius: 5px;
 }
