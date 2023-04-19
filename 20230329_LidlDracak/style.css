@@ -1,0 +1,19 @@
+body {
+   width: 100vw;
+   height: 100vh;
+   
+   margin: 0;
+   padding: 0;
+   
+   position: absolute;
+   background-color: rgb(59, 60, 73);
+}
+
+.whole {
+   position: relative;
+
+   width: fit-content;
+   height: fit-content;
+
+   margin: 0 auto;
+}
