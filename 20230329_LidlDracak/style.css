@@ -1,12 +1,8 @@
-body {
-   width: 100vw;
-   height: 100vh;
-   
+body {   
    margin: 0;
    padding: 0;
-   
-   position: absolute;
-   background-color: rgb(59, 60, 73);
+
+   position: relative;
 }
 
 .whole {
@@ -16,4 +12,11 @@ body {
    height: fit-content;
 
    margin: 0 auto;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+
+   background-color: rgb(59, 60, 73);
 }
