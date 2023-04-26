@@ -6,14 +6,65 @@ body {
    padding: 0;
    
    position: absolute;
-   background-color: rgb(59, 60, 73);
+
+   font-family: "Roboto", sans-serif;
+   color: aliceblue;
+}
+
+h1 {
+   margin: 0;
+   margin-bottom: 0.2em;
 }
 
 .whole {
-   position: relative;
+   margin: 0 auto;
+   margin-top: 10vh;
 
    width: fit-content;
    height: fit-content;
 
-   margin: 0 auto;
+   background-color: brown;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+
+   padding: 1em;
+
+   border-radius: 10px;
+}
+
+.input-section {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.parameter-input {
+   width: 100%;
+
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+
+   margin-bottom: 0.2em;
+}
+
+.parameter-input > input {
+   background-color: rgb(117, 23, 23);
+
+   border: 1px solid;
+   border-color: black;
+
+   margin-left: 0.5em;
+
+   color: rgb(219, 224, 226);
+}
+
+.parameter-input > input:focus {
+   outline: 1px solid;
+   outline-color: rgb(197, 197, 197);
 }

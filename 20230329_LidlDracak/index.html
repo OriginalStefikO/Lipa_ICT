@@ -15,19 +15,24 @@
    <section class="whole">
       <h1>Player Creation</h1>
       <section class="input-section">
-         <input type="text" placeholder="Player name">
+         <div class="parameter-input">
+            <label for="health">Name:</label>
+            <input type="text" placeholder="Player name">
+         </div>
+
          <div class="parameter-input">
             <label for="health">Health:</label>
-            <input type="number" name="health">
+            <input type="number" name="health" min="1" value="1">
          </div>
          <div class="parameter-input">
             <label for="mana">Mana:</label>
-            <input type="number" name="mana">
+            <input type="number" name="mana" min="1" value="1">
          </div>
          <div class="parameter-input">
             <label for="strength">Strength:</label>
-            <input type="number" name="strength">
+            <input type="number" name="strength" min="0" value="0">
          </div>
+
       </section>
 
       <button>Play</button>
