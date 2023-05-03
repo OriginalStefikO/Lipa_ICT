@@ -2,41 +2,45 @@
 <html lang="en">
 
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
-   <script type="module" src="main.js"></script>
-   <link rel="stylesheet" href="style.css">
+    <script defer type="module" src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-   <section class="whole">
-      <h1>Player Creation</h1>
-      <section class="input-section">
-         <div class="parameter-input">
-            <label for="health">Name:</label>
-            <input type="text" placeholder="Player name">
-         </div>
+    <section class="whole">
+        <h1>Player Creation</h1>
+        <section class="input-section">
+            <div class="parameter-input">
+                <label for="health">Name:</label>
+                <input type="text" placeholder="Player name">
+            </div>
 
-         <div class="parameter-input">
-            <label for="health">Health:</label>
-            <input type="number" name="health" min="1" value="1">
-         </div>
-         <div class="parameter-input">
-            <label for="mana">Mana:</label>
-            <input type="number" name="mana" min="1" value="1">
-         </div>
-         <div class="parameter-input">
-            <label for="strength">Strength:</label>
-            <input type="number" name="strength" min="0" value="0">
-         </div>
+            <div class="parameter-input">
+                <label for="health">Health:</label>
+                <input type="number" name="health" min="1" value="1">
+            </div>
 
-      </section>
+            <div class="parameter-input">
+                <label for="mana">Mana:</label>
+                <input type="number" name="mana" min="1" value="1">
+            </div>
 
-      <button>Play</button>
-   </section>
+            <div class="parameter-input">
+                <label for="strength">Strength:</label>
+                <input type="number" name="strength" min="0" value="0">
+            </div>
+
+        </section>
+
+        <button class="main-button" id="mainButton">Play</button>
+
+        <div id="weaponDiv"></div>
+    </section>
 </body>
 
 </html>
